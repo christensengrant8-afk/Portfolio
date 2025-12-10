@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Stats Challenge - Guess the Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1d428a 0%, #c8102e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1d428a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #c8102e;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1d428a;
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 3px solid #1d428a;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .stat-label {
+            font-weight: bold;
+            color: #1d428a;
+            font-size: 1.1rem;
+        }
+
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #c8102e;
+        }
+
+        .answer-section {
+            margin: 30px 0;
+        }
+
+        .player-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .player-button {
+            background: linear-gradient(135deg, #1d428a 0%, #2855ac 100%);
+            color: white;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .player-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #2855ac 0%, #1d428a 100%);
+        }
+
+        .player-button:active {
+            transform: translateY(0);
+        }
+
+        .player-button.correct {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            animation: pulse 0.5s;
+        }
+
+        .player-button.incorrect {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            animation: shake 0.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .result-message {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: none;
+        }
+
+        .result-message.show {
+            display: block;
+        }
+
+        .result-message.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+
+        .result-message.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .new-game-button {
+            background: linear-gradient(135deg, #c8102e 0%, #e64158 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .new-game-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .score-item {
+            text-align: center;
+        }
+
+        .score-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .score-value {
+            color: #1d428a;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .player-options {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🏀 NBA Stats Challenge</h1>
+        <p class="subtitle">Can you guess the player based on their stats?</p>
+        
+        <div class="nav-links">
+            <a href="index.html">← Portfolio</a>
+            <a href="scratch.html">← Snowboarding Page</a>
+        </div>
+
+        <div class="score-board">
+            <div class="score-item">
+                <div class="score-label">Correct</div>
+                <div class="score-value" id="correctScore">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Streak</div>
+                <div class="score-value" id="streakScore">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Total</div>
+                <div class="score-value" id="totalScore">0</div>
+            </div>
+        </div>
+
+        <div class="stats-card">
+            <h2 style="text-align: center; color: #1d428a; margin-bottom: 20px;">Season Statistics</h2>
+            <div class="stat-row">
+                <span class="stat-label">Points Per Game (PPG)</span>
+                <span class="stat-value" id="ppg">--</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Rebounds Per Game (RPG)</span>
+                <span class="stat-value" id="rpg">--</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Assists Per Game (APG)</span>
+                <span class="stat-value" id="apg">--</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Field Goal % (FG%)</span>
+                <span class="stat-value" id="fgp">--</span>
+            </div>
+        </div>
+
+        <div class="answer-section">
+            <h3 style="text-align: center; color: #666; margin-bottom: 20px;">Who is this player?</h3>
+            <div class="player-options" id="playerOptions">
+                <!-- Buttons will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="result-message" id="resultMessage"></div>
+
+        <div class="controls">
+            <button class="new-game-button" onclick="newQuestion()">Next Question</button>
+        </div>
+    </div>
+
+    <script>
+        // NBA Players database with realistic stats
+        const players = [
+            { name: "LeBron James", ppg: 25.7, rpg: 7.3, apg: 7.3, fgp: 50.3 },
+            { name: "Stephen Curry", ppg: 29.4, rpg: 5.1, apg: 6.3, fgp: 47.2 },
+            { name: "Kevin Durant", ppg: 29.1, rpg: 6.6, apg: 5.0, fgp: 52.0 },
+            { name: "Giannis Antetokounmpo", ppg: 31.1, rpg: 11.8, apg: 5.7, fgp: 55.3 },
+            { name: "Luka Doncic", ppg: 28.4, rpg: 8.7, apg: 8.0, fgp: 47.7 },
+            { name: "Joel Embiid", ppg: 33.1, rpg: 10.2, apg: 4.2, fgp: 54.8 },
+            { name: "Nikola Jokic", ppg: 24.5, rpg: 11.8, apg: 9.8, fgp: 63.2 },
+            { name: "Jayson Tatum", ppg: 30.1, rpg: 8.8, apg: 4.6, fgp: 46.6 },
+            { name: "Damian Lillard", ppg: 32.2, rpg: 4.8, apg: 7.3, fgp: 46.3 },
+            { name: "Anthony Davis", ppg: 25.9, rpg: 12.5, apg: 2.6, fgp: 56.3 },
+            { name: "Kawhi Leonard", ppg: 23.8, rpg: 6.5, apg: 3.9, fgp: 51.2 },
+            { name: "James Harden", ppg: 21.0, rpg: 6.1, apg: 10.7, fgp: 44.1 },
+            { name: "Devin Booker", ppg: 27.8, rpg: 4.5, apg: 6.2, fgp: 46.9 },
+            { name: "Donovan Mitchell", ppg: 28.3, rpg: 4.4, apg: 4.3, fgp: 48.4 }
+        ];
+
+        let currentPlayer;
+        let options;
+        let correctAnswers = 0;
+        let totalQuestions = 0;
+        let streak = 0;
+        let answered = false;
+
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function newQuestion() {
+            answered = false;
+            document.getElementById('resultMessage').classList.remove('show');
+            
+            // Select random player
+            currentPlayer = players[Math.floor(Math.random() * players.length)];
+            
+            // Display stats
+            document.getElementById('ppg').textContent = currentPlayer.ppg;
+            document.getElementById('rpg').textContent = currentPlayer.rpg;
+            document.getElementById('apg').textContent = currentPlayer.apg;
+            document.getElementById('fgp').textContent = currentPlayer.fgp + '%';
+            
+            // Create options (correct answer + 3 random wrong answers)
+            const wrongPlayers = players.filter(p => p.name !== currentPlayer.name);
+            const shuffledWrong = shuffleArray(wrongPlayers).slice(0, 3);
+            options = shuffleArray([currentPlayer, ...shuffledWrong]);
+            
+            // Create buttons
+            const optionsContainer = document.getElementById('playerOptions');
+            optionsContainer.innerHTML = '';
+            
+            options.forEach(player => {
+                const button = document.createElement('button');
+                button.className = 'player-button';
+                button.textContent = player.name;
+                button.onclick = () => checkAnswer(player.name, button);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedName, button) {
+            if (answered) return;
+            answered = true;
+            
+            totalQuestions++;
+            const resultMessage = document.getElementById('resultMessage');
+            const allButtons = document.querySelectorAll('.player-button');
+            
+            if (selectedName === currentPlayer.name) {
+                correctAnswers++;
+                streak++;
+                button.classList.add('correct');
+                resultMessage.textContent = `🎉 Correct! That's ${currentPlayer.name}!`;
+                resultMessage.className = 'result-message correct show';
+            } else {
+                streak = 0;
+                button.classList.add('incorrect');
+                
+                // Highlight correct answer
+                allButtons.forEach(btn => {
+                    if (btn.textContent === currentPlayer.name) {
+                        btn.classList.add('correct');
+                    }
+                });
+                
+                resultMessage.textContent = `❌ Wrong! The correct answer was ${currentPlayer.name}.`;
+                resultMessage.className = 'result-message incorrect show';
+            }
+            
+            // Update scores
+            document.getElementById('correctScore').textContent = correctAnswers;
+            document.getElementById('totalScore').textContent = totalQuestions;
+            document.getElementById('streakScore').textContent = streak;
+            
+            // Disable all buttons
+            allButtons.forEach(btn => btn.onclick = null);
+        }
+
+        // Start first question
+        newQuestion();
+    </script>
+</body>
+</html>

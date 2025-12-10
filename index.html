@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Christensen - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #002E5D;
+            --secondary-color: #0062B8;
+            --accent-color: #A3AAAE;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+            padding: 1rem 2rem;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem 0;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .resume-section {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .resume-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .resume-item h3 {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-item h4 {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .date-location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .resume-item ul {
+            margin-left: 1.5rem;
+        }
+        
+        .resume-item ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-section {
+            padding: 4rem 0;
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .contact-section a {
+            color: white;
+            font-size: 2rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        
+        .contact-section a:hover {
+            color: var(--accent-color);
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            border: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-custom:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Grant Christensen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>Grant Christensen</h1>
+            <p>History Major | Entrepreneur | Finance Enthusiast</p>
+            <p>Brigham Young University - Marriott School of Business</p>
+            <a href="#education" class="btn btn-custom">View My Resume</a>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="resume-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="resume-item">
+                <h3>Brigham Young University -- Marriott School of Business</h3>
+                <div class="date-location">
+                    <i class="fas fa-map-marker-alt"></i> Provo, UT | 
+                    <i class="fas fa-calendar"></i> Sep 2023 - Present
+                </div>
+                <h4>History Major</h4>
+                <ul>
+                    <li><strong>GPA:</strong> 3.6</li>
+                    <li>Active member of the Real Estate and Asset Management clubs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="resume-item">
+                <h3>Kansas City Pest Control</h3>
+                <div class="date-location">
+                    <i class="fas fa-map-marker-alt"></i> Kansas City, MO | 
+                    <i class="fas fa-calendar"></i> Jun 2023 - Present
+                </div>
+                <h4>Co-Owner, Sales Manager, Technician</h4>
+                <ul>
+                    <li>Successfully promote and market pest control services to residential and commercial clients</li>
+                    <li>Networking and effective communication in successful hiring strategy</li>
+                    <li>Allocation management of capital, time and funds in investment and expansion of business</li>
+                    <li>Played key role in achieving 200% growth in 2024</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <h3>The Church of Jesus Christ of Latter-day Saints</h3>
+                <div class="date-location">
+                    <i class="fas fa-map-marker-alt"></i> Montevideo, Uruguay | 
+                    <i class="fas fa-calendar"></i> Jul 2021 - Jul 2023
+                </div>
+                <h4>Volunteer Representative</h4>
+                <ul>
+                    <li>Facilitated individualized and generalized training sessions, reviewed goals, and developed strategic plans with large groups of other volunteers</li>
+                    <li>Planned and executed presentations and seminars with a focus on delivering effective instruction, education, and service</li>
+                    <li>Helped others in dire or impoverished circumstances find aid and relief through religious organization and spiritual self-evaluation</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <h3>Thunder Pest Control</h3>
+                <div class="date-location">
+                    <i class="fas fa-map-marker-alt"></i> Oklahoma City, OK | 
+                    <i class="fas fa-calendar"></i> Apr 2017 - Jun 2021
+                </div>
+                <h4>Sales Representative</h4>
+                <ul>
+                    <li>Conducted door-to-door sales, successfully increasing the customer base for Thunder Pest Control</li>
+                    <li>Demonstrated excellent communication and persuasion skills to convert cold leads into sales</li>
+                    <li>Consistently achieved sales goals, contributing to the company's growth and success</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <h3>Christensen Farms, L.L.C.</h3>
+                <div class="date-location">
+                    <i class="fas fa-map-marker-alt"></i> Piedmont, OK | 
+                    <i class="fas fa-calendar"></i> Jan 2015 - Jun 2021
+                </div>
+                <h4>Employee, Farmhand</h4>
+                <ul>
+                    <li>Performed various farm duties including tending to cattle, fixing and building fences, framing and roofing barns, foundation and cement work, and clearing land</li>
+                    <li>Daily farm operations, ensuring efficient and effective workflow as team leader and responsibilities delegator</li>
+                    <li>Valuable experience in agricultural engineering, construction, and farm management</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Interests</h2>
+            <div class="text-center">
+                <span class="skill-badge"><i class="fas fa-language"></i> Fluent in Spanish</span>
+                <span class="skill-badge"><i class="fas fa-chart-line"></i> Stock Market Analysis</span>
+                <span class="skill-badge"><i class="fas fa-file-excel"></i> Microsoft Excel</span>
+                <span class="skill-badge"><i class="fas fa-comments"></i> Sales & Marketing</span>
+                <span class="skill-badge"><i class="fas fa-users"></i> Team Leadership</span>
+                <span class="skill-badge"><i class="fas fa-handshake"></i> Networking</span>
+                <span class="skill-badge"><i class="fas fa-snowboarding"></i> Snowboarding</span>
+                <span class="skill-badge"><i class="fas fa-basketball-ball"></i> College Sports</span>
+            </div>
+            <div class="text-center mt-5">
+                <h4 style="color: var(--primary-color);">Notable Achievements</h4>
+                <p class="lead">Participated in Walmart Finance Case competition with the focus to increase profits through its Omnichannel</p>
+                <p class="lead">Played key role in Kansas City Pest Control 200% growth in 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <p class="lead mb-4">Interested in working together? Let's connect!</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/grantchristensen8" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:grant.christensen@byu.edu" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/grantchristensen" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Grant Christensen. All rights reserved.</p>
+        <p>Built with Bootstrap</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

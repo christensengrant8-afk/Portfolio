@@ -1,0 +1,310 @@
+/* Font family specification */
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Custom background image for hero section */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1418290232843-5d098cb?w=1600');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 46, 93, 0.6);
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Navigation styling with font color */
+.main-nav {
+    background-color: #002E5D;
+    padding: 0;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav li {
+    margin: 0;
+}
+
+.main-nav a {
+    display: block;
+    color: white;  /* Font color specification */
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    background-color: #0062B8;
+    color: #FFD700;  /* Font color for hover state */
+}
+
+/* Div for content positioning */
+.section {
+    padding: 4rem 2rem;
+}
+
+/* Div with custom background color */
+.alt-section {
+    background-color: #f0f8ff;
+}
+
+/* Div for centering content */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading styles with font color */
+h2 {
+    color: #002E5D;  /* Font color specification */
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Georgia', serif;  /* Font family specification */
+}
+
+h3 {
+    color: #0062B8;  /* Font color specification */
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;  /* Font color specification */
+}
+
+/* Feature image styling */
+.feature-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Div for tricks list positioning */
+.tricks-list {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+/* Ordered and unordered list styling */
+ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ol > li {
+    counter-increment: item;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+ol > li::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #002E5D;  /* Font color */
+}
+
+ol > li strong {
+    font-size: 1.3rem;
+    color: #0062B8;  /* Font color */
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    color: #555;  /* Font color */
+}
+
+/* Resort cards grid with div positioning */
+.resort-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Div for individual resort card styling */
+.resort-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.resort-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.resort-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.resort-card h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.5rem;
+    color: #002E5D;  /* Font color */
+}
+
+.resort-card p {
+    padding: 0 1rem 1.5rem 1rem;
+    color: #666;  /* Font color */
+}
+
+/* Video container div for responsive video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;  /* Font color */
+    margin-top: 1rem;
+}
+
+/* Tableau container div */
+.tableau-container {
+    margin: 2rem auto;
+    max-width: 1200px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.note {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #856404;  /* Font color */
+}
+
+/* Footer styling */
+footer {
+    background-color: #1a1a1a;
+    color: white;  /* Font color */
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: #0062B8;  /* Font color */
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+footer a:hover {
+    color: #FFD700;  /* Font color for hover */
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+    }
+}
