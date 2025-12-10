@@ -160,6 +160,369 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
+
+        /* Interest sections */
+        .interest-section {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .interest-section .section-title {
+            margin-bottom: 2rem;
+        }
+
+        .snow-hero {
+            background-image: url('https://images.unsplash.com/photo-1418290232843-5d098cb?w=1600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .snow-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 46, 93, 0.6);
+        }
+
+        .snow-hero h3,
+        .snow-hero p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .snow-hero h3 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .snow-block {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        .snow-subheading {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Georgia', serif;
+            text-align: center;
+        }
+
+        .snow-feature-image {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .snow-progress-list {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .snow-progress-list > li {
+            counter-increment: item;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .snow-progress-list > li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .snow-progress-list strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .snow-progress-list ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            color: #555;
+        }
+
+        .snow-resort-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .snow-resort-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .snow-resort-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .snow-resort-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .snow-resort-card h3 {
+            padding: 1rem;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .snow-resort-card p {
+            padding: 0 1.5rem 1.5rem;
+            color: #555;
+        }
+
+        .snow-video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .snow-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .snow-video-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 1rem;
+        }
+
+        #snowboarding .tableau-container {
+            margin: 2rem auto;
+            max-width: 1200px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .snow-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 2rem;
+            color: #856404;
+        }
+
+        /* NBA Game section */
+        #nba-game {
+            background-color: #eef2f7;
+        }
+
+        #nba-game .game-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        #nba-game .game-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        #nba-game .game-scoreboard {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        #nba-game .score-item {
+            text-align: center;
+        }
+
+        #nba-game .score-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        #nba-game .score-value {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        #nba-game .stats-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 3px solid var(--primary-color);
+        }
+
+        #nba-game .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        #nba-game .stat-label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        #nba-game .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        #nba-game .player-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        #nba-game .player-button {
+            background: linear-gradient(135deg, var(--primary-color), #2855ac);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #nba-game .player-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        #nba-game .player-button.correct {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            animation: pulse 0.5s;
+        }
+
+        #nba-game .player-button.incorrect {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            animation: shake 0.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+
+        #nba-game .game-question-heading {
+            text-align: center;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        #nba-game .player-button:disabled {
+            opacity: 0.9;
+            cursor: default;
+        }
+
+        #nba-game .result-message {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+            display: none;
+        }
+
+        #nba-game .result-message.show {
+            display: block;
+        }
+
+        #nba-game .result-message.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+
+        #nba-game .result-message.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+
+        #nba-game .new-game-button {
+            background: linear-gradient(135deg, #c8102e, #e64158);
+            color: white;
+            border: none;
+            padding: 0.9rem 2.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #nba-game .new-game-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            #nba-game .player-options {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -176,6 +539,8 @@
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#snowboarding">Snowboarding</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nba-game">NBA Game</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -297,6 +662,192 @@
         </div>
     </section>
 
+    <!-- Snowboarding Section -->
+    <section id="snowboarding" class="interest-section">
+        <div class="container">
+            <h2 class="section-title">Snowboarding & Adventure</h2>
+            <div class="snow-hero">
+                <h3>The Thrill of Snowboarding</h3>
+                <p>My Passion for Powder and Progression</p>
+            </div>
+
+            <div class="snow-block" id="snow-intro">
+                <h3 class="snow-subheading">Why I Love Snowboarding</h3>
+                <p>Snowboarding isn't just a sport—it's a lifestyle, an addiction, and a form of pure freedom. There's nothing quite like carving down a mountain with fresh powder under your board.</p>
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=500&fit=crop" alt="Snowboarder carving down a mountain with powder spray" class="snow-feature-image">
+                <p>Whether it's the adrenaline rush of hitting a big jump, the satisfaction of landing a new trick, or simply the peaceful glide through untouched snow—snowboarding offers something unique every time you strap in.</p>
+            </div>
+
+            <div class="snow-block" id="snow-tricks">
+                <h3 class="snow-subheading">Essential Tricks to Master</h3>
+                <p class="text-center">A progression path that keeps me pushing from beginner to expert level riding.</p>
+                <ol class="snow-progress-list">
+                    <li>
+                        <strong>Beginner Level</strong>
+                        <ul>
+                            <li>Ollie - The foundation of all tricks</li>
+                            <li>180s - Half rotation spins</li>
+                            <li>Basic grabs - Method, Indy, Mute</li>
+                            <li>Straight airs - Getting comfortable in the air</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Intermediate Level</strong>
+                        <ul>
+                            <li>360s - Full rotation spins</li>
+                            <li>Backside and frontside boardslides</li>
+                            <li>50-50 grinds on boxes and rails</li>
+                            <li>Switch riding - Riding opposite stance</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Advanced Level</strong>
+                        <ul>
+                            <li>540s and 720s - Multiple rotations</li>
+                            <li>Backflips and frontflips</li>
+                            <li>Butter tricks - Presses and spins on snow</li>
+                            <li>Technical rail combinations</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Expert Level</strong>
+                        <ul>
+                            <li>Double corks - Double off-axis flips</li>
+                            <li>Triple corks - The holy grail</li>
+                            <li>Complex rail transfers</li>
+                            <li>Backcountry big mountain lines</li>
+                        </ul>
+                    </li>
+                </ol>
+                <img src="https://images.unsplash.com/photo-1565011523534-747a8601f10a?w=800&h=500&fit=crop" alt="Snowboarder performing a trick in the terrain park" class="snow-feature-image">
+            </div>
+
+            <div class="snow-block" id="snow-resorts">
+                <h3 class="snow-subheading">Top Snowboarding Destinations</h3>
+                <p class="text-center">Here are some of the best resorts I've ridden or dream of visiting:</p>
+                <div class="snow-resort-grid">
+                    <div class="snow-resort-card">
+                        <h3>Park City, Utah</h3>
+                        <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=400&h=300&fit=crop" alt="Park City Mountain Resort with snow-covered peaks">
+                        <p>Largest ski resort in the United States with incredible terrain variety and amazing parks.</p>
+                    </div>
+                    <div class="snow-resort-card">
+                        <h3>Whistler Blackcomb, BC</h3>
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop" alt="Whistler mountain village and peaks">
+                        <p>One of the most iconic resorts in North America with massive vertical and epic powder.</p>
+                    </div>
+                    <div class="snow-resort-card">
+                        <h3>Jackson Hole, Wyoming</h3>
+                        <img src="https://images.unsplash.com/photo-1491677533181-21b6c13c8c5e?w=400&h=300&fit=crop" alt="Jackson Hole steep terrain and mountain views">
+                        <p>Known for steep terrain and challenging runs—a true test for advanced riders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="snow-block" id="snow-video">
+                <h3 class="snow-subheading">Epic Snowboarding Action</h3>
+                <p class="text-center">Check out this incredible video that captures the freedom and excitement of snowboarding.</p>
+                <div class="snow-video-container">
+                    <iframe src="https://www.youtube.com/embed/yzLT6_TQmq8" title="Snowboarding video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="snow-video-caption">This video perfectly captures the energy of exploring fresh powder and stomping new tricks.</p>
+            </div>
+
+            <div class="snow-block" id="snow-tableau">
+                <h3 class="snow-subheading">Snowboarding Industry Statistics</h3>
+                <p>Below is an interactive Tableau visualization showing snowboarding trends and data. <strong>You can interact with the graph by clicking and hovering over elements.</strong></p>
+                <div class="tableau-container">
+                    <div class='tableauPlaceholder' id='viz1765342879536' style='position: relative'>
+                        <noscript>
+                            <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleTrendsSkiingvsSnowboarding&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
+                        </noscript>
+                        <object class='tableauViz'  style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='GoogleTrendsSkiingvsSnowboarding&#47;Dashboard1' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleTrendsSkiingvsSnowboarding&#47;Dashboard1&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='en-US' />
+                        </object>
+                    </div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1765342879536');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+                        else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+                        else { vizElement.style.width='100%';vizElement.style.height='1277px';}
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                </div>
+                <p class="snow-note"><strong>Note:</strong> I can swap in additional data stories here to highlight future projects or case studies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NBA Stats Game Section -->
+    <section id="nba-game" class="interest-section">
+        <div class="container">
+            <h2 class="section-title">NBA Stats Challenge</h2>
+            <p class="game-subtitle">Can you guess the player based on their stats?</p>
+            <div class="game-container">
+                <div class="game-scoreboard">
+                    <div class="score-item">
+                        <div class="score-label">Correct</div>
+                        <div class="score-value" id="correctScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-label">Streak</div>
+                        <div class="score-value" id="streakScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-label">Total</div>
+                        <div class="score-value" id="totalScore">0</div>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <h3 class="snow-subheading" style="margin-bottom: 1.5rem;">Season Statistics</h3>
+                    <div class="stat-row">
+                        <span class="stat-label">Points Per Game (PPG)</span>
+                        <span class="stat-value" id="ppg">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Rebounds Per Game (RPG)</span>
+                        <span class="stat-value" id="rpg">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Assists Per Game (APG)</span>
+                        <span class="stat-value" id="apg">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Field Goal % (FG%)</span>
+                        <span class="stat-value" id="fgp">--</span>
+                    </div>
+                </div>
+
+                <div class="answer-section">
+                    <h3 class="game-question-heading">Who is this player?</h3>
+                    <div class="player-options" id="playerOptions"></div>
+                </div>
+
+                <div class="result-message" id="resultMessage"></div>
+
+                <div class="text-center mt-3">
+                    <button class="new-game-button" id="nextQuestionButton">Next Question</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -321,6 +872,121 @@
         <p>&copy; 2024 Grant Christensen. All rights reserved.</p>
         <p>Built with Bootstrap</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const players = [
+                { name: "LeBron James", ppg: 25.7, rpg: 7.3, apg: 7.3, fgp: 50.3 },
+                { name: "Stephen Curry", ppg: 29.4, rpg: 5.1, apg: 6.3, fgp: 47.2 },
+                { name: "Kevin Durant", ppg: 29.1, rpg: 6.6, apg: 5.0, fgp: 52.0 },
+                { name: "Giannis Antetokounmpo", ppg: 31.1, rpg: 11.8, apg: 5.7, fgp: 55.3 },
+                { name: "Luka Doncic", ppg: 28.4, rpg: 8.7, apg: 8.0, fgp: 47.7 },
+                { name: "Joel Embiid", ppg: 33.1, rpg: 10.2, apg: 4.2, fgp: 54.8 },
+                { name: "Nikola Jokic", ppg: 24.5, rpg: 11.8, apg: 9.8, fgp: 63.2 },
+                { name: "Jayson Tatum", ppg: 30.1, rpg: 8.8, apg: 4.6, fgp: 46.6 },
+                { name: "Damian Lillard", ppg: 32.2, rpg: 4.8, apg: 7.3, fgp: 46.3 },
+                { name: "Anthony Davis", ppg: 25.9, rpg: 12.5, apg: 2.6, fgp: 56.3 },
+                { name: "Kawhi Leonard", ppg: 23.8, rpg: 6.5, apg: 3.9, fgp: 51.2 },
+                { name: "James Harden", ppg: 21.0, rpg: 6.1, apg: 10.7, fgp: 44.1 },
+                { name: "Devin Booker", ppg: 27.8, rpg: 4.5, apg: 6.2, fgp: 46.9 },
+                { name: "Donovan Mitchell", ppg: 28.3, rpg: 4.4, apg: 4.3, fgp: 48.4 }
+            ];
+
+            const correctScoreEl = document.getElementById('correctScore');
+            const streakScoreEl = document.getElementById('streakScore');
+            const totalScoreEl = document.getElementById('totalScore');
+            const ppgEl = document.getElementById('ppg');
+            const rpgEl = document.getElementById('rpg');
+            const apgEl = document.getElementById('apg');
+            const fgpEl = document.getElementById('fgp');
+            const optionsContainer = document.getElementById('playerOptions');
+            const resultMessage = document.getElementById('resultMessage');
+            const nextQuestionButton = document.getElementById('nextQuestionButton');
+
+            if (!optionsContainer || !nextQuestionButton) {
+                return;
+            }
+
+            let currentPlayer = null;
+            let correctAnswers = 0;
+            let totalQuestions = 0;
+            let streak = 0;
+            let answered = false;
+
+            function shuffleArray(array) {
+                const newArray = [...array];
+                for (let i = newArray.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+                }
+                return newArray;
+            }
+
+            function updateScores() {
+                correctScoreEl.textContent = correctAnswers;
+                totalScoreEl.textContent = totalQuestions;
+                streakScoreEl.textContent = streak;
+            }
+
+            function newQuestion() {
+                answered = false;
+                resultMessage.classList.remove('show', 'correct', 'incorrect');
+                resultMessage.textContent = '';
+
+                currentPlayer = players[Math.floor(Math.random() * players.length)];
+                ppgEl.textContent = currentPlayer.ppg;
+                rpgEl.textContent = currentPlayer.rpg;
+                apgEl.textContent = currentPlayer.apg;
+                fgpEl.textContent = currentPlayer.fgp + '%';
+
+                const wrongPlayers = players.filter(p => p.name !== currentPlayer.name);
+                const shuffledWrong = shuffleArray(wrongPlayers).slice(0, 3);
+                const options = shuffleArray([currentPlayer, ...shuffledWrong]);
+
+                optionsContainer.innerHTML = '';
+                options.forEach(player => {
+                    const button = document.createElement('button');
+                    button.className = 'player-button';
+                    button.type = 'button';
+                    button.textContent = player.name;
+                    button.addEventListener('click', () => checkAnswer(player.name, button));
+                    optionsContainer.appendChild(button);
+                });
+            }
+
+            function checkAnswer(selectedName, button) {
+                if (answered) return;
+                answered = true;
+                totalQuestions++;
+
+                const buttons = optionsContainer.querySelectorAll('.player-button');
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (selectedName === currentPlayer.name) {
+                    correctAnswers++;
+                    streak++;
+                    button.classList.add('correct');
+                    resultMessage.textContent = `🎉 Correct! That's ${currentPlayer.name}!`;
+                    resultMessage.className = 'result-message correct show';
+                } else {
+                    streak = 0;
+                    button.classList.add('incorrect');
+                    buttons.forEach(btn => {
+                        if (btn.textContent === currentPlayer.name) {
+                            btn.classList.add('correct');
+                        }
+                    });
+                    resultMessage.textContent = `❌ Wrong! The correct answer was ${currentPlayer.name}.`;
+                    resultMessage.className = 'result-message incorrect show';
+                }
+
+                updateScores();
+            }
+
+            nextQuestionButton.addEventListener('click', newQuestion);
+            newQuestion();
+        });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
